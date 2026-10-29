@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ABC College</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>ABC College</h1>
+    <nav>
+        <a href="inex.html">Home</a>
+        <a href="institution.html">About</a>
+        <a href="departments.html">Departments</a>
+        <a href="courses.html">Courses</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="page-banner">
+    <h2>Contact Us</h2>
+    <p>We are happy to answer your questions.</p>
+</section>
+
+<main class="container">
+    <div class="cards">
+        <div class="content-box">
+            <h3>College Address</h3>
+            <p>ABC College</p>
+            <p>College Road, Andhra Pradesh, India</p>
+            <a class="btn"
+               href="https://www.google.com/maps/search/colleges+in+Andhra+Pradesh/"
+               target="_blank" rel="noopener">View on Map</a>
+        </div>
+
+        <div class="content-box">
+            <h3>Contact Information</h3>
+            <p><b>Email:</b>
+                <a href="mailto:info@example.com">info@example.com</a>
+            </p>
+            <p><b>Phone:</b> +91-00000-00000</p>
+            <p><b>Office Hours:</b> Monday to Saturday</p>
+            <a class="btn" href="admissions.html">Admission Enquiry</a>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h3>Send an Enquiry</h3>
+        <form action="#" method="get">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name"
+                   placeholder="Enter your name" required>
+
+            <label for="contact-email">Your Email</label>
+            <input type="email" id="contact-email" name="email"
+                   placeholder="Enter your email" required>
+
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+                <option>General Enquiry</option>
+                <option>Admissions</option>
+                <option>Courses</option>
+                <option>Campus Events</option>
+            </select>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message"
+                      placeholder="Type your message here" required></textarea>
+
+            <button type="submit">Send Enquiry</button>
+        </form>
+        <p><small>This demonstration form does not send messages to the college.</small></p>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 ABC College. All rights reserved.</p>
+    <p><a href="index.html">Back to Home</a></p>
+</footer>
+</body>
+</html>
