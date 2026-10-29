@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Library</title>
+    <link rel="stylesheet" href="library.css">
+</head>
+<body>
+
+<header>
+    <h1>📚 Digital Library</h1>
+    <p>Discover books. Explore knowledge.</p>
+</header>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="categories.html">Categories</a>
+    <a href="authors.html">Authors</a>
+    <a href="availability.html">Availability</a>
+    <a href="rules.html">Library Rules</a>
+</nav>
+
+<section class="hero">
+    <h2>Welcome to Our Digital Library</h2>
+    <p>Explore your favorite books and discover new ideas.</p>
+    <a class="btn" href="categories.html">Explore Books</a>
+</section>
+
+<main class="container">
+    <h2>Book Catalog</h2>
+
+    <input type="text" id="search"
+           placeholder="Search by book or author...">
+
+    <div class="filters">
+        <a href="categories.html">All Categories</a>
+        <a href="categories.html#fiction">Fiction</a>
+        <a href="categories.html#science">Science</a>
+        <a href="categories.html#technology">Technology</a>
+        <a href="categories.html#history">History</a>
+    </div>
+
+    <div class="book-grid" id="bookGrid">
+
+        <div class="book-card" data-title="the alchemist" data-author="paulo coelho">
+            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=500&q=80" alt="Book cover">
+            <h3>The Alchemist</h3>
+            <p>Author: Paulo Coelho</p>
+            <p>Category: Fiction</p>
+            <span class="available">Available</span>
+            <p><a href="authors.html#paulo">Author Details</a></p>
+        </div>
+
+        <div class="book-card" data-title="brief history of time" data-author="stephen hawking">
+            <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=500&q=80" alt="Book cover">
+            <h3>A Brief History of Time</h3>
+            <p>Author: Stephen Hawking</p>
+            <p>Category: Science</p>
+            <span class="available">Available</span>
+            <p><a href="authors.html#stephen">Author Details</a></p>
+        </div>
+
+        <div class="book-card" data-title="clean code" data-author="robert martin">
+            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=500&q=80" alt="Book cover">
+            <h3>Clean Code</h3>
+            <p>Author: Robert C. Martin</p>
+            <p>Category: Technology</p>
+            <span class="unavailable">Borrowed</span>
+            <p><a href="authors.html#robert">Author Details</a></p>
+        </div>
+
+        <div class="book-card" data-title="india after gandhi" data-author="ramachandra guha">
+            <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=500&q=80" alt="Book cover">
+            <h3>India After Gandhi</h3>
+            <p>Author: Ramachandra Guha</p>
+            <p>Category: History</p>
+            <span class="available">Available</span>
+            <p><a href="authors.html#ramachandra">Author Details</a></p>
+        </div>
+
+    </div>
+    <p id="noResults" hidden>No books found. Try another search.</p>
+
+    <h2>Catalog Information</h2>
+    <table>
+        <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>The Alchemist</td>
+            <td>Paulo Coelho</td>
+            <td>Fiction</td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td>A Brief History of Time</td>
+            <td>Stephen Hawking</td>
+            <td>Science</td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td>Clean Code</td>
+            <td>Robert C. Martin</td>
+            <td>Technology</td>
+            <td>Borrowed</td>
+        </tr>
+        <tr>
+            <td>India After Gandhi</td>
+            <td>Ramachandra Guha</td>
+            <td>History</td>
+            <td>Available</td>
+        </tr>
+    </table>
+</main>
+
+<footer>
+    <p>© 2026 Digital Library | Read More, Learn More</p>
+    <a href="rules.html">Read Library Rules</a>
+</footer>
+
+<script>
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".book-card");
+const noResults = document.getElementById("noResults");
+
+search.addEventListener("input", function () {
+    let count = 0;
+    const value = search.value.toLowerCase();
+
+    cards.forEach(function (card) {
+        const text = card.innerText.toLowerCase();
+        const match = text.includes(value);
+        card.style.display = match ? "block" : "none";
+        if (match) count++;
+    });
+
+    noResults.hidden = count !== 0;
+});
+</script>
+
+</body>
+</html>
