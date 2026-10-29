@@ -1,0 +1,320 @@
+
+/* GENERAL STYLING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #080808;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 3px solid #ff3030;
+}
+
+/* LOGO */
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span,
+footer span {
+    color: #ff3030;
+}
+
+/* NAVIGATION LINKS */
+nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff3030;
+}
+
+/* HOME PAGE BANNER */
+.hero {
+    min-height: 65vh;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(#0009, #0009),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 60px);
+    line-height: 1.2;
+}
+
+.hero h1 span {
+    color: #ff3030;
+}
+
+.hero p {
+    max-width: 550px;
+    margin: 20px 0;
+}
+
+/* SECTIONS */
+section {
+    padding: 55px 7%;
+    text-align: center;
+}
+
+section h1,
+section h2 {
+    margin-bottom: 20px;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 11px 20px;
+    margin: 5px;
+    background-color: #ff3030;
+    color: white;
+    border: 2px solid #ff3030;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: #ff3030;
+    transform: translateY(-3px);
+}
+
+/* IMAGE CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.card {
+    background-color: #202020;
+    border: 1px solid #393939;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 22px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: #ff3030;
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+.card h3 {
+    color: #ff3030;
+    margin: 15px 0 8px;
+}
+
+.card p {
+    padding: 0 12px;
+    margin-bottom: 10px;
+}
+
+.card-link {
+    color: #ff5555;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-link:hover {
+    color: white;
+}
+
+/* CLASS SCHEDULE TABLE */
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 550px;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background-color: #202020;
+}
+
+th,
+td {
+    padding: 14px;
+    border: 1px solid #444;
+    text-align: center;
+}
+
+th {
+    background-color: #ff3030;
+    color: white;
+}
+
+tr:hover td {
+    background-color: #333;
+}
+
+td a {
+    color: #ff5555;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+td a:hover {
+    color: white;
+}
+
+/* REGISTRATION FORM */
+form {
+    max-width: 550px;
+    margin: auto;
+    padding: 25px;
+    text-align: left;
+    background-color: #202020;
+    border-radius: 10px;
+    border: 1px solid #444;
+}
+
+label {
+    display: block;
+    margin-top: 14px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    background-color: #111;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #ff3030;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    background-color: #080808;
+    padding: 25px;
+    border-top: 3px solid #ff3030;
+}
+
+footer p {
+    margin: 10px;
+    color: #ccc;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+}
+
+footer a:hover {
+    color: #ff3030;
+}
+
+/* TABLET RESPONSIVE DESIGN */
+@media (max-width: 800px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE RESPONSIVE DESIGN */
+@media (max-width: 550px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 35px 5%;
+    }
+
+    .hero {
+        padding: 40px 6%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    nav {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    form {
+        padding: 18px;
+    }
+}
